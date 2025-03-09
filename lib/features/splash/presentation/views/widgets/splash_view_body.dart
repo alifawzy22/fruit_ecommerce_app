@@ -2,8 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruit_ecommerce_app/core/utils/assets_images.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> {
+  @override
+  initState() {
+    super.initState();
+    excuteNavigator();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,5 +37,11 @@ class SplashViewBody extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> excuteNavigator() {
+    return Future.delayed(const Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, '/home');
+    });
   }
 }
