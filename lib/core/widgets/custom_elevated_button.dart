@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_ecommerce_app/core/utils/app_color.dart';
 import 'package:fruit_ecommerce_app/core/utils/styles.dart';
-import '../../generated/l10n.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String text;

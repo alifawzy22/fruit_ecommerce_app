@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruit_ecommerce_app/core/helper_functions/get_current_locale.dart';
 import 'package:fruit_ecommerce_app/core/utils/assets_images.dart';
 import 'package:fruit_ecommerce_app/features/on_board/presentation/views/on_board_view.dart';
-import 'package:intl/intl.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
