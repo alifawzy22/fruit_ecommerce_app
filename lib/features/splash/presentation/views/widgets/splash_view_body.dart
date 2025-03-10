@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit_ecommerce_app/core/helper_functions/get_current_locale.dart';
 import 'package:fruit_ecommerce_app/core/utils/assets_images.dart';
+import 'package:fruit_ecommerce_app/features/on_board/presentation/views/on_board_view.dart';
+import 'package:intl/intl.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -24,7 +27,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: isLocaleArabic()
+                ? MainAxisAlignment.end
+                : MainAxisAlignment.start,
             children: [
               SvgPicture.asset(AssetsImages.splashPlant),
             ],
@@ -39,9 +44,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     );
   }
 
-  Future<void> excuteNavigator() {
-    return Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, '/home');
+  void excuteNavigator() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, OnBoardView.routeName);
     });
   }
 }
