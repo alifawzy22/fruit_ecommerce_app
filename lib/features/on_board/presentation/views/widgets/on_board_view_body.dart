@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:fruit_ecommerce_app/core/utils/app_color.dart';
 import 'package:fruit_ecommerce_app/features/on_board/presentation/views/widgets/on_board_page_view.dart';
 
+import '../../../../../constants.dart';
+import '../../../../../core/utils/services/shared_preferences_singelton.dart';
 import '../../../../../core/widgets/custom_elevated_button.dart';
 import '../../../../../generated/l10n.dart';
+import '../../../../auth/presentation/views/login_view.dart';
 
 class OnBoardViewBody extends StatefulWidget {
   const OnBoardViewBody({super.key});
@@ -68,7 +71,14 @@ class _OnBoardViewBodyState extends State<OnBoardViewBody> {
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: CustomElevatedButton(
                   text: S.of(context).OnBoardStartButton,
-                  onTap: () {},
+                  onTap: () async {
+                    await Prefs.setBool(kIsOnBoardViewed, true);
+
+                    Navigator.pushReplacementNamed(
+                      context,
+                      LoginView.routeName,
+                    );
+                  },
                 ),
               ),
             ),

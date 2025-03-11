@@ -3,10 +3,13 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruit_ecommerce_app/core/helper_functions/build_theme_data.dart';
 import 'package:fruit_ecommerce_app/core/helper_functions/on_generate_routes.dart';
 
+import 'core/utils/services/shared_preferences_singelton.dart';
 import 'features/splash/presentation/views/splash_view.dart';
 import 'generated/l10n.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Prefs.init();
   runApp(const FruitsHub());
 }
 

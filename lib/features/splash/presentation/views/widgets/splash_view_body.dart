@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit_ecommerce_app/constants.dart';
 import 'package:fruit_ecommerce_app/core/helper_functions/get_current_locale.dart';
 import 'package:fruit_ecommerce_app/core/utils/assets_images.dart';
+import 'package:fruit_ecommerce_app/core/utils/services/shared_preferences_singelton.dart';
+import 'package:fruit_ecommerce_app/features/auth/presentation/views/login_view.dart';
 import 'package:fruit_ecommerce_app/features/on_board/presentation/views/on_board_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -45,7 +48,11 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   void excuteNavigator() {
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, OnBoardView.routeName);
+      if (Prefs.getBool(kIsOnBoardViewed)) {
+        Navigator.pushReplacementNamed(context, LoginView.routeName);
+      } else {
+        Navigator.pushReplacementNamed(context, OnBoardView.routeName);
+      }
     });
   }
 }
