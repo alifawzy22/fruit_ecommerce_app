@@ -4,7 +4,7 @@
 // function name.
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new, depend_on_referenced_packages
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
@@ -22,17 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "OnBoardItem1SubTitle": MessageLookupByLibrary.simpleMessage(
-      "Enjoy Shopping with FruitHUB. Explore Wide Variety of Fresh Fruits and get the best offers with high quality",
-    ),
-    "OnBoardItem1Title": MessageLookupByLibrary.simpleMessage("Welcome to"),
-    "OnBoardItem2SubTitle": MessageLookupByLibrary.simpleMessage(
-      "We Provide you best carfully choosing fruits. Look on Details,Images and Evaluations to ensure from best choice",
-    ),
-    "OnBoardItem2Title": MessageLookupByLibrary.simpleMessage(
-      "Search and Shopping",
-    ),
-    "OnBoardNextStep": MessageLookupByLibrary.simpleMessage("Skip"),
-    "OnBoardStartButton": MessageLookupByLibrary.simpleMessage("Start Now"),
-  };
+        "OnBoardItem1SubTitle": MessageLookupByLibrary.simpleMessage(
+          "Enjoy Shopping with FruitHUB. Explore Wide Variety of Fresh Fruits and get the best offers with high quality",
+        ),
+        "OnBoardItem1Title": MessageLookupByLibrary.simpleMessage("Welcome to"),
+        "OnBoardItem2SubTitle": MessageLookupByLibrary.simpleMessage(
+          "We Provide you best carfully choosing fruits. Look on Details,Images and Evaluations to ensure from best choice",
+        ),
+        "OnBoardItem2Title": MessageLookupByLibrary.simpleMessage(
+          "Search and Shopping",
+        ),
+        "OnBoardNextStep": MessageLookupByLibrary.simpleMessage("Skip"),
+        "OnBoardStartButton": MessageLookupByLibrary.simpleMessage("Start Now"),
+      };
 }

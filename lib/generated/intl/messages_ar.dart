@@ -4,7 +4,7 @@
 // function name.
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new, depend_on_referenced_packages
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
@@ -22,15 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "OnBoardItem1SubTitle": MessageLookupByLibrary.simpleMessage(
-      "أكتشف تجربة تسوف فريدة مع FruitHUB. أستكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة وأحصل علي أفضل العروض والجودة العالية",
-    ),
-    "OnBoardItem1Title": MessageLookupByLibrary.simpleMessage("مرحباً بك في"),
-    "OnBoardItem2SubTitle": MessageLookupByLibrary.simpleMessage(
-      "نقدم لك أفضل الفواكه المختارة بعناية. أطلع علي التفاصيل والصور والتقييمات للتأكد من إختيار الفاكهة المثالية",
-    ),
-    "OnBoardItem2Title": MessageLookupByLibrary.simpleMessage("أبحث و تسوق"),
-    "OnBoardNextStep": MessageLookupByLibrary.simpleMessage("تخط"),
-    "OnBoardStartButton": MessageLookupByLibrary.simpleMessage("أبدأ الآن"),
-  };
+        "OnBoardItem1SubTitle": MessageLookupByLibrary.simpleMessage(
+          "أكتشف تجربة تسوف فريدة مع FruitHUB. أستكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة وأحصل علي أفضل العروض والجودة العالية",
+        ),
+        "OnBoardItem1Title":
+            MessageLookupByLibrary.simpleMessage("مرحباً بك في"),
+        "OnBoardItem2SubTitle": MessageLookupByLibrary.simpleMessage(
+          "نقدم لك أفضل الفواكه المختارة بعناية. أطلع علي التفاصيل والصور والتقييمات للتأكد من إختيار الفاكهة المثالية",
+        ),
+        "OnBoardItem2Title":
+            MessageLookupByLibrary.simpleMessage("أبحث و تسوق"),
+        "OnBoardNextStep": MessageLookupByLibrary.simpleMessage("تخط"),
+        "OnBoardStartButton": MessageLookupByLibrary.simpleMessage("أبدأ الآن"),
+      };
 }

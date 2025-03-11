@@ -1,10 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruit_ecommerce_app/constants.dart';
 import 'package:fruit_ecommerce_app/core/helper_functions/get_current_locale.dart';
 import 'package:fruit_ecommerce_app/core/utils/assets_images.dart';
-import 'package:fruit_ecommerce_app/core/utils/localization/localization_cubit.dart';
-import 'package:fruit_ecommerce_app/core/utils/services/service_locator.dart';
 import 'package:fruit_ecommerce_app/core/utils/services/shared_preferences_singelton.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/views/login_view.dart';
 import 'package:fruit_ecommerce_app/features/on_board/presentation/views/on_board_view.dart';
