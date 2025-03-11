@@ -4,6 +4,8 @@ import 'package:fruit_ecommerce_app/core/utils/app_color.dart';
 import 'package:fruit_ecommerce_app/features/on_board/presentation/views/widgets/on_board_page_view.dart';
 
 import '../../../../../constants.dart';
+import '../../../../../core/utils/localization/localization_cubit.dart';
+import '../../../../../core/utils/services/service_locator.dart';
 import '../../../../../core/utils/services/shared_preferences_singelton.dart';
 import '../../../../../core/widgets/custom_elevated_button.dart';
 import '../../../../../generated/l10n.dart';
@@ -84,6 +86,15 @@ class _OnBoardViewBodyState extends State<OnBoardViewBody> {
             ),
             SizedBox(height: 43),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await serviceLocator<LocalizationCubit>().toggleLanguage();
+        },
+        child: Icon(
+          Icons.language,
+          size: 50,
         ),
       ),
     );
