@@ -5,20 +5,19 @@ import 'package:fruit_ecommerce_app/core/utils/localization/localization_cubit.d
 import 'package:fruit_ecommerce_app/core/utils/services/service_locator.dart';
 import 'package:fruit_ecommerce_app/generated/l10n.dart';
 
-import 'widgets/login_view_body.dart';
+import 'widgets/register_view_body.dart';
 
-class LoginView extends StatelessWidget {
-  static const String routeName = AppRoutes.loginView;
-  const LoginView({super.key});
-
+class RegisterView extends StatelessWidget {
+  const RegisterView({super.key});
+  static const routeName = AppRoutes.registerView;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(
-          title: S.of(context).LoginViewTitle,
+          title: S.of(context).RegisterViewTitle,
           leading: IconButton(
               onPressed: () {
-                //Navigator.pop(context);
+                Navigator.pop(context);
               },
               icon: Icon(
                 Icons.arrow_back_ios_new,
@@ -33,7 +32,7 @@ class LoginView extends StatelessWidget {
               ),
             ),
           ]),
-      body: LoginViewBody(),
+      body: RegisterViewBody(),
     );
   }
 }

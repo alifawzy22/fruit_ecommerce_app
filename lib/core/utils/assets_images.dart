@@ -11,4 +11,8 @@ class AssetsImages {
       'assets/images/page_view_item2_background_image.svg';
   static const String pageViewItem2Image =
       'assets/images/page_view_item2_image.svg';
+  static const String goolgeIcon = 'assets/images/goolge_icon.svg';
+  static const String facebookIcon = 'assets/images/facebook_icon.svg';
+  static const String appleIcon = 'assets/images/apple_icon.svg';
+  static const String checkIcon = 'assets/images/check_icon.svg';
 }

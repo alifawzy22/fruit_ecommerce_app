@@ -1,6 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'intl/messages_all.dart';
@@ -30,9 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -109,6 +108,151 @@ class S {
   /// `Skip`
   String get OnBoardNextStep {
     return Intl.message('Skip', name: 'OnBoardNextStep', desc: '', args: []);
+  }
+
+  /// `Login`
+  String get LoginViewTitle {
+    return Intl.message('Login', name: 'LoginViewTitle', desc: '', args: []);
+  }
+
+  /// `Email Address`
+  String get AuthEmailAddressHint {
+    return Intl.message(
+      'Email Address',
+      name: 'AuthEmailAddressHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get AuthFullNameHint {
+    return Intl.message(
+      'Full Name',
+      name: 'AuthFullNameHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get AuthPasswordHint {
+    return Intl.message(
+      'Password',
+      name: 'AuthPasswordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password?`
+  String get AuthForgetPassword {
+    return Intl.message(
+      'Forget Password?',
+      name: 'AuthForgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't Have an Account?`
+  String get AuthDontHaveAccount {
+    return Intl.message(
+      'Don\'t Have an Account?',
+      name: 'AuthDontHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register Now`
+  String get AuthRegisterNow {
+    return Intl.message(
+      'Register Now',
+      name: 'AuthRegisterNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OR`
+  String get Or {
+    return Intl.message('OR', name: 'Or', desc: '', args: []);
+  }
+
+  /// `Login With {provider}`
+  String LoginWithProvider(Object provider) {
+    return Intl.message(
+      'Login With $provider',
+      name: 'LoginWithProvider',
+      desc: '',
+      args: [provider],
+    );
+  }
+
+  /// `Register`
+  String get RegisterViewTitle {
+    return Intl.message(
+      'Register',
+      name: 'RegisterViewTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By creating an account, you agree to our `
+  String get RegisterViewTermsAndConditionsLabel {
+    return Intl.message(
+      'By creating an account, you agree to our ',
+      name: 'RegisterViewTermsAndConditionsLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `terms and conditions.`
+  String get RegisterViewTermsAndConditions {
+    return Intl.message(
+      'terms and conditions.',
+      name: 'RegisterViewTermsAndConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account`
+  String get CreateNewAccount {
+    return Intl.message(
+      'Create Account',
+      name: 'CreateNewAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have an Account?`
+  String get AuthHaveAccount {
+    return Intl.message(
+      'Have an Account?',
+      name: 'AuthHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google`
+  String get Google {
+    return Intl.message('Google', name: 'Google', desc: '', args: []);
+  }
+
+  /// `Apple`
+  String get Apple {
+    return Intl.message('Apple', name: 'Apple', desc: '', args: []);
+  }
+
+  /// `Facebook`
+  String get Facebook {
+    return Intl.message('Facebook', name: 'Facebook', desc: '', args: []);
   }
 }
 

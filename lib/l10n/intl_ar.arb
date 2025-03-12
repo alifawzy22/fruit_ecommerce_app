@@ -4,6 +4,23 @@
     "OnBoardItem2Title": "أبحث و تسوق",
     "OnBoardItem2SubTitle": "نقدم لك أفضل الفواكه المختارة بعناية. أطلع علي التفاصيل والصور والتقييمات للتأكد من إختيار الفاكهة المثالية",
     "OnBoardStartButton":"أبدأ الآن",
-    "OnBoardNextStep":"تخط"
+    "OnBoardNextStep":"تخط",
+    "LoginViewTitle":"تسجيل دخول",
+    "AuthEmailAddressHint":"البريد الإلكتروني",
+    "AuthFullNameHint":"الأسم كامل",
+    "AuthPasswordHint":"كلمة المرور",
+    "AuthForgetPassword":"نسيت كلمة المرور؟",
+    "AuthDontHaveAccount":"لا تمتلك حساب؟",
+    "AuthRegisterNow":"قم بإنشاء حساب",
+    "Or":"أو",
+    "LoginWithProvider":"تسجيل بواسطة {provider}",
+    "RegisterViewTitle":"حساب جديد",
+    "RegisterViewTermsAndConditionsLabel":"من خلال إنشاء حساب ، فإنك توافق علي ",
+    "RegisterViewTermsAndConditions":"الشروط والأحكام الخاصة بنا.",
+    "CreateNewAccount":"إنشاء حساب جديد",
+    "AuthHaveAccount":"تمتلك حساب بالفعل؟",
+    "Google":"جوجل",
+    "Apple":"أبل",
+    "Facebook":"فيسبوك"
     
 }

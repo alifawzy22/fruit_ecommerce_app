@@ -4,6 +4,24 @@
     "OnBoardItem2Title": "Search and Shopping",
     "OnBoardItem2SubTitle": "We Provide you best carfully choosing fruits. Look on Details,Images and Evaluations to ensure from best choice",
     "OnBoardStartButton":"Start Now",
-    "OnBoardNextStep":"Skip"
+    "OnBoardNextStep":"Skip",
+    "LoginViewTitle":"Login",
+    "AuthEmailAddressHint":"Email Address",
+    "AuthFullNameHint":"Full Name",
+    "AuthPasswordHint":"Password",
+    "AuthForgetPassword":"Forget Password?",
+    "AuthDontHaveAccount":"Don't Have an Account?",
+    "AuthRegisterNow":"Register Now",
+    "Or":"OR",
+    "LoginWithProvider":"Login With {provider}",
+    "RegisterViewTitle":"Register",
+    "RegisterViewTermsAndConditionsLabel":"By creating an account, you agree to our ",
+    "RegisterViewTermsAndConditions":"terms and conditions.",
+    "CreateNewAccount":"Create Account",
+    "AuthHaveAccount":"Have an Account?",
+    "Google":"Google",
+    "Apple":"Apple",
+    "Facebook":"Facebook"
+
 
 }

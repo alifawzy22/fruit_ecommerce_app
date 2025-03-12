@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_ecommerce_app/features/auth/presentation/views/register_view.dart';
 import 'package:fruit_ecommerce_app/features/splash/presentation/views/splash_view.dart';
 
 import '../../features/auth/presentation/views/login_view.dart';
@@ -12,6 +13,8 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const OnBoardView());
     case LoginView.routeName:
       return MaterialPageRoute(builder: (context) => const LoginView());
+    case RegisterView.routeName:
+      return MaterialPageRoute(builder: (context) => const RegisterView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
