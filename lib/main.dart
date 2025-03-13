@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -6,6 +7,7 @@ import 'package:fruit_ecommerce_app/core/helper_functions/on_generate_routes.dar
 import 'package:fruit_ecommerce_app/core/utils/localization/localization_cubit.dart';
 import 'package:fruit_ecommerce_app/core/utils/localization/localization_state.dart';
 import 'package:fruit_ecommerce_app/core/utils/services/service_locator.dart';
+import 'package:fruit_ecommerce_app/firebase_options.dart';
 
 import 'core/utils/services/shared_preferences_singelton.dart';
 import 'features/splash/presentation/views/splash_view.dart';
@@ -13,6 +15,9 @@ import 'generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await Prefs.init();
   setUpServiceLocator();
   runApp(const FruitsHub());
