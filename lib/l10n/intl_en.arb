@@ -21,7 +21,35 @@
     "AuthHaveAccount":"Have an Account?",
     "Google":"Google",
     "Apple":"Apple",
-    "Facebook":"Facebook"
+    "Facebook":"Facebook",
+    "FireBaseWeakPassword":"The password provided is too weak.",
+    "FireBaseEmailAlreadyInUse":"The account already exists for that email.",
+    "FireBaseInvalidEmail":"The email address is malformed or invalid.",
+    "FireBaseOperationNotAllowed":"The requested authentication operation (e.g., email/password sign-in) is not enabled in the Firebase Console.",
+    "FireBaseTooManyRequests":"Too many requests were made to the server. This is often due to repeated failed login attempts.",
+    "FireBaseAccountExistWithDifferntCredential":"An account already exists with the same email but different sign-in credentials.",
+    "FireBaseCredentialAlreadyInUse":"The credential is already associated with a different user account.",
+    "FireBaseRequiresRecentLogin":"The operation requires a recent login.",
+    "FireBaseInvalidVerificationCode":" The SMS verification code is invalid.",
+    "FireBaseInvalidVerificationID":" The verification ID used for phone authentication is invalid.",
+    "FireBaseSessionExpired":"The SMS code has expired.",
+    "FireBaseInvalidCredential":"The credential is malformed or has expired.",
+    "FireBaseUserMisMatch":"The credential does not match the current user.",
+    "FireBaseNetworkRequestFailed":"A network error occurred (e.g., no internet connection).",
+    "FireBaseEnternalError":"An internal error occurred in the Firebase Authentication server.",
+    "FireBaseAppNotAuthorized":"The app is not authorized to use Firebase Authentication.",
+    "FireBaseUserDisabled":"The user’s account has been disabled by an administrator.",
+    "FireBaseExpiredActionCode":"The action code (e.g., password reset code) has expired.",
+    "FireBaseInvalidActionCode":"The action code is invalid.",
+    "FireBaseMissingVerificationCode":"The verification code is missing.",
+    "FireBaseQuotaExceeded":"The quota for the operation has been exceeded (e.g., too many SMS messages sent).",
+    "FireBaseUserNotFound":"User Not Found",
+    "FireBaseWrongPassword":"Wrong Password",
+    "FireBaseUnknownError":"There is an error, please try later.",
+    "requiredFiled":"{name} is required.",
+    "RegisterViewPleaseAcceptTermsAndConditions":"Please accept terms and conditions.",
+    "AuthRegisterSuccessSnackBar":"Create User Successfully"
+
 
 
 }

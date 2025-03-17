@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(provider) => "تسجيل بواسطة ${provider}";
 
+  static String m1(name) => "${name} يجب إدخالة.";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Apple": MessageLookupByLibrary.simpleMessage("أبل"),
@@ -40,8 +42,84 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "AuthPasswordHint": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "AuthRegisterNow": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
+    "AuthRegisterSuccessSnackBar": MessageLookupByLibrary.simpleMessage(
+      "تم إنشاء المستخدم بنجاح.",
+    ),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "Facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
+    "FireBaseAccountExistWithDifferntCredential":
+        MessageLookupByLibrary.simpleMessage(
+          "يوجد حساب موجود بالفعل بنفس البريد الإلكتروني ولكن بيانات تسجيل الدخول مختلفة.",
+        ),
+    "FireBaseAppNotAuthorized": MessageLookupByLibrary.simpleMessage(
+      "لا يُسمح للتطبيق باستخدام مصادقة قاعدة البيانات.",
+    ),
+    "FireBaseCredentialAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "تم ربط بيانات الاعتماد بالفعل بحساب مستخدم مختلف.",
+    ),
+    "FireBaseEmailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "الحساب موجود بالفعل.",
+    ),
+    "FireBaseEnternalError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ داخلي في خادم مصادقة قاعدة البيانات.",
+    ),
+    "FireBaseExpiredActionCode": MessageLookupByLibrary.simpleMessage(
+      "لقد انتهت صلاحية رمز الإجراء (على سبيل المثال، رمز إعادة تعيين كلمة المرور).",
+    ),
+    "FireBaseInvalidActionCode": MessageLookupByLibrary.simpleMessage(
+      "كود الإجراء غير صالح.",
+    ),
+    "FireBaseInvalidCredential": MessageLookupByLibrary.simpleMessage(
+      "إن بيانات الاعتماد مشوهة أو منتهية الصلاحية.",
+    ),
+    "FireBaseInvalidEmail": MessageLookupByLibrary.simpleMessage(
+      "عنوان البريد الإلكتروني غير صحيح أو غير صالح.",
+    ),
+    "FireBaseInvalidVerificationCode": MessageLookupByLibrary.simpleMessage(
+      " رمز التحقق من الرسائل النصية القصيرة غير صالح.",
+    ),
+    "FireBaseInvalidVerificationID": MessageLookupByLibrary.simpleMessage(
+      " معرف التحقق المستخدم لمصادقة الهاتف غير صالح.",
+    ),
+    "FireBaseMissingVerificationCode": MessageLookupByLibrary.simpleMessage(
+      "رمز التحقق مفقود.",
+    ),
+    "FireBaseNetworkRequestFailed": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ في الشبكة (على سبيل المثال، عدم وجود اتصال بالإنترنت).",
+    ),
+    "FireBaseOperationNotAllowed": MessageLookupByLibrary.simpleMessage(
+      "لم يتم تمكين عملية المصادقة المطلوبة (على سبيل المثال، تسجيل الدخول بالبريد الإلكتروني/كلمة المرور) في وحدة تحكم قاعدة البيانات.",
+    ),
+    "FireBaseQuotaExceeded": MessageLookupByLibrary.simpleMessage(
+      "تم تجاوز الحصة المخصصة للعملية (على سبيل المثال، تم إرسال عدد كبير جدًا من رسائل SMS).",
+    ),
+    "FireBaseRequiresRecentLogin": MessageLookupByLibrary.simpleMessage(
+      "تتطلب العملية تسجيل دخول حديث.",
+    ),
+    "FireBaseSessionExpired": MessageLookupByLibrary.simpleMessage(
+      "لقد انتهت صلاحية رمز الرسالة النصية القصيرة.",
+    ),
+    "FireBaseTooManyRequests": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال عدد كبير جدًا من الطلبات إلى الخادم. غالبًا ما يكون ذلك بسبب محاولات تسجيل دخول فاشلة متكررة.",
+    ),
+    "FireBaseUnknownError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ, برجاء المحاولة لاحقاً.",
+    ),
+    "FireBaseUserDisabled": MessageLookupByLibrary.simpleMessage(
+      "لقد تم تعطيل حساب المستخدم من قبل المسؤول.",
+    ),
+    "FireBaseUserMisMatch": MessageLookupByLibrary.simpleMessage(
+      "لا تتطابق بيانات الاعتماد مع المستخدم الحالي.",
+    ),
+    "FireBaseUserNotFound": MessageLookupByLibrary.simpleMessage(
+      "المستخدم غير موجود",
+    ),
+    "FireBaseWeakPassword": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور المدخلة ضعيفة.",
+    ),
+    "FireBaseWrongPassword": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور غير صحيحة",
+    ),
     "Google": MessageLookupByLibrary.simpleMessage("جوجل"),
     "LoginViewTitle": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "LoginWithProvider": m0,
@@ -56,6 +134,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "OnBoardNextStep": MessageLookupByLibrary.simpleMessage("تخط"),
     "OnBoardStartButton": MessageLookupByLibrary.simpleMessage("أبدأ الآن"),
     "Or": MessageLookupByLibrary.simpleMessage("أو"),
+    "RegisterViewPleaseAcceptTermsAndConditions":
+        MessageLookupByLibrary.simpleMessage(
+          "برجاء الموافقة علي الشروط والأحكام.",
+        ),
     "RegisterViewTermsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام الخاصة بنا.",
     ),
@@ -63,5 +145,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "من خلال إنشاء حساب ، فإنك توافق علي ",
     ),
     "RegisterViewTitle": MessageLookupByLibrary.simpleMessage("حساب جديد"),
+    "requiredFiled": m1,
   };
 }

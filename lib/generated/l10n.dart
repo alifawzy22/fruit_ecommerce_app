@@ -254,6 +254,276 @@ class S {
   String get Facebook {
     return Intl.message('Facebook', name: 'Facebook', desc: '', args: []);
   }
+
+  /// `The password provided is too weak.`
+  String get FireBaseWeakPassword {
+    return Intl.message(
+      'The password provided is too weak.',
+      name: 'FireBaseWeakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The account already exists for that email.`
+  String get FireBaseEmailAlreadyInUse {
+    return Intl.message(
+      'The account already exists for that email.',
+      name: 'FireBaseEmailAlreadyInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The email address is malformed or invalid.`
+  String get FireBaseInvalidEmail {
+    return Intl.message(
+      'The email address is malformed or invalid.',
+      name: 'FireBaseInvalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The requested authentication operation (e.g., email/password sign-in) is not enabled in the Firebase Console.`
+  String get FireBaseOperationNotAllowed {
+    return Intl.message(
+      'The requested authentication operation (e.g., email/password sign-in) is not enabled in the Firebase Console.',
+      name: 'FireBaseOperationNotAllowed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many requests were made to the server. This is often due to repeated failed login attempts.`
+  String get FireBaseTooManyRequests {
+    return Intl.message(
+      'Too many requests were made to the server. This is often due to repeated failed login attempts.',
+      name: 'FireBaseTooManyRequests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An account already exists with the same email but different sign-in credentials.`
+  String get FireBaseAccountExistWithDifferntCredential {
+    return Intl.message(
+      'An account already exists with the same email but different sign-in credentials.',
+      name: 'FireBaseAccountExistWithDifferntCredential',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The credential is already associated with a different user account.`
+  String get FireBaseCredentialAlreadyInUse {
+    return Intl.message(
+      'The credential is already associated with a different user account.',
+      name: 'FireBaseCredentialAlreadyInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The operation requires a recent login.`
+  String get FireBaseRequiresRecentLogin {
+    return Intl.message(
+      'The operation requires a recent login.',
+      name: 'FireBaseRequiresRecentLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` The SMS verification code is invalid.`
+  String get FireBaseInvalidVerificationCode {
+    return Intl.message(
+      ' The SMS verification code is invalid.',
+      name: 'FireBaseInvalidVerificationCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` The verification ID used for phone authentication is invalid.`
+  String get FireBaseInvalidVerificationID {
+    return Intl.message(
+      ' The verification ID used for phone authentication is invalid.',
+      name: 'FireBaseInvalidVerificationID',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The SMS code has expired.`
+  String get FireBaseSessionExpired {
+    return Intl.message(
+      'The SMS code has expired.',
+      name: 'FireBaseSessionExpired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The credential is malformed or has expired.`
+  String get FireBaseInvalidCredential {
+    return Intl.message(
+      'The credential is malformed or has expired.',
+      name: 'FireBaseInvalidCredential',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The credential does not match the current user.`
+  String get FireBaseUserMisMatch {
+    return Intl.message(
+      'The credential does not match the current user.',
+      name: 'FireBaseUserMisMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A network error occurred (e.g., no internet connection).`
+  String get FireBaseNetworkRequestFailed {
+    return Intl.message(
+      'A network error occurred (e.g., no internet connection).',
+      name: 'FireBaseNetworkRequestFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An internal error occurred in the Firebase Authentication server.`
+  String get FireBaseEnternalError {
+    return Intl.message(
+      'An internal error occurred in the Firebase Authentication server.',
+      name: 'FireBaseEnternalError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The app is not authorized to use Firebase Authentication.`
+  String get FireBaseAppNotAuthorized {
+    return Intl.message(
+      'The app is not authorized to use Firebase Authentication.',
+      name: 'FireBaseAppNotAuthorized',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The user’s account has been disabled by an administrator.`
+  String get FireBaseUserDisabled {
+    return Intl.message(
+      'The user’s account has been disabled by an administrator.',
+      name: 'FireBaseUserDisabled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The action code (e.g., password reset code) has expired.`
+  String get FireBaseExpiredActionCode {
+    return Intl.message(
+      'The action code (e.g., password reset code) has expired.',
+      name: 'FireBaseExpiredActionCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The action code is invalid.`
+  String get FireBaseInvalidActionCode {
+    return Intl.message(
+      'The action code is invalid.',
+      name: 'FireBaseInvalidActionCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The verification code is missing.`
+  String get FireBaseMissingVerificationCode {
+    return Intl.message(
+      'The verification code is missing.',
+      name: 'FireBaseMissingVerificationCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The quota for the operation has been exceeded (e.g., too many SMS messages sent).`
+  String get FireBaseQuotaExceeded {
+    return Intl.message(
+      'The quota for the operation has been exceeded (e.g., too many SMS messages sent).',
+      name: 'FireBaseQuotaExceeded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Not Found`
+  String get FireBaseUserNotFound {
+    return Intl.message(
+      'User Not Found',
+      name: 'FireBaseUserNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong Password`
+  String get FireBaseWrongPassword {
+    return Intl.message(
+      'Wrong Password',
+      name: 'FireBaseWrongPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There is an error, please try later.`
+  String get FireBaseUnknownError {
+    return Intl.message(
+      'There is an error, please try later.',
+      name: 'FireBaseUnknownError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{name} is required.`
+  String requiredFiled(Object name) {
+    return Intl.message(
+      '$name is required.',
+      name: 'requiredFiled',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Please accept terms and conditions.`
+  String get RegisterViewPleaseAcceptTermsAndConditions {
+    return Intl.message(
+      'Please accept terms and conditions.',
+      name: 'RegisterViewPleaseAcceptTermsAndConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create User Successfully`
+  String get AuthRegisterSuccessSnackBar {
+    return Intl.message(
+      'Create User Successfully',
+      name: 'AuthRegisterSuccessSnackBar',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
