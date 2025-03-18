@@ -24,4 +24,16 @@ class AuthReposImple implements AuthRepos {
       return left(ServerFailure(errMessage: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> logininWithEmailAndPassword(
+      {required String userEmail, required String userPassword}) async {
+    try {
+      UserEntity model = await firebaseAuthService.loginWithEmailAndPassword(
+          userEmail: userEmail, userPassword: userPassword);
+      return right(model);
+    } catch (e) {
+      return left(ServerFailure(errMessage: e.toString()));
+    }
+  }
 }

@@ -38,6 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "AuthFullNameHint": MessageLookupByLibrary.simpleMessage("Full Name"),
     "AuthHaveAccount": MessageLookupByLibrary.simpleMessage("Have an Account?"),
+    "AuthLoginSuccessSnackBar": MessageLookupByLibrary.simpleMessage(
+      "Login Successfully",
+    ),
     "AuthPasswordHint": MessageLookupByLibrary.simpleMessage("Password"),
     "AuthRegisterNow": MessageLookupByLibrary.simpleMessage("Register Now"),
     "AuthRegisterSuccessSnackBar": MessageLookupByLibrary.simpleMessage(

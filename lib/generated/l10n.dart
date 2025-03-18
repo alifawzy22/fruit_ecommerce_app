@@ -524,6 +524,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Login Successfully`
+  String get AuthLoginSuccessSnackBar {
+    return Intl.message(
+      'Login Successfully',
+      name: 'AuthLoginSuccessSnackBar',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

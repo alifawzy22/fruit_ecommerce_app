@@ -48,5 +48,6 @@
     "FireBaseUnknownError":"حدث خطأ, برجاء المحاولة لاحقاً.",
     "requiredFiled":"{name} يجب إدخالة.",
     "RegisterViewPleaseAcceptTermsAndConditions":"برجاء الموافقة علي الشروط والأحكام.",
-    "AuthRegisterSuccessSnackBar":"تم إنشاء المستخدم بنجاح."
+    "AuthRegisterSuccessSnackBar":"تم إنشاء المستخدم بنجاح.",
+    "AuthLoginSuccessSnackBar":"تم تسجيل الدخول بنجاح."
 }

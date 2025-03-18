@@ -48,7 +48,8 @@
     "FireBaseUnknownError":"There is an error, please try later.",
     "requiredFiled":"{name} is required.",
     "RegisterViewPleaseAcceptTermsAndConditions":"Please accept terms and conditions.",
-    "AuthRegisterSuccessSnackBar":"Create User Successfully"
+    "AuthRegisterSuccessSnackBar":"Create User Successfully",
+    "AuthLoginSuccessSnackBar":"Login Successfully"
 
 
 

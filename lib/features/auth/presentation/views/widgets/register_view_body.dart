@@ -1,16 +1,17 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_ecommerce_app/core/helper_functions/build_snack_bar.dart';
 import 'package:fruit_ecommerce_app/core/utils/app_color.dart';
 import 'package:fruit_ecommerce_app/core/utils/styles.dart';
 import 'package:fruit_ecommerce_app/core/widgets/custom_elevated_button.dart';
+import 'package:fruit_ecommerce_app/core/widgets/custom_modal_progress_hud.dart';
 import 'package:fruit_ecommerce_app/features/auth/domain/auth_entities/user_entity.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/managers/auth_register_cubit/auth_register_cubit.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/managers/auth_register_cubit/auth_register_state.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/views/widgets/custom_check_box.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:fruit_ecommerce_app/generated/l10n.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class RegisterViewBody extends StatefulWidget {
   const RegisterViewBody({super.key});
@@ -30,20 +31,14 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
     return BlocConsumer<AuthRegisterCubit, AuthRegisterState>(
       listener: (context, state) {
         if (state is AuthRegisterSuccessState) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(S.of(context).AuthRegisterSuccessSnackBar),
-          ));
+          buildSnackBar(context, S.of(context).AuthRegisterSuccessSnackBar);
         } else if (state is AuthRegisterFailureState) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.errMessage),
-            ),
-          );
+          buildSnackBar(context, state.errMessage);
         }
       },
       builder: (context, state) {
-        return ModalProgressHUD(
-          inAsyncCall: state is AuthRegisterLoadingState,
+        return CustomModalProgressHud(
+          isLoading: state is AuthRegisterLoadingState,
           child: SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Form(
@@ -141,13 +136,12 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                             );
                           } else {
                             // Show snack bar
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(S
+
+                            buildSnackBar(
+                                context,
+                                S
                                     .of(context)
-                                    .RegisterViewPleaseAcceptTermsAndConditions),
-                              ),
-                            );
+                                    .RegisterViewPleaseAcceptTermsAndConditions);
                           }
                         } else {
                           setState(() {

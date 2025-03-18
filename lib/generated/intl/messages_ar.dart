@@ -40,6 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "AuthHaveAccount": MessageLookupByLibrary.simpleMessage(
       "تمتلك حساب بالفعل؟",
     ),
+    "AuthLoginSuccessSnackBar": MessageLookupByLibrary.simpleMessage(
+      "تم تسجيل الدخول بنجاح.",
+    ),
     "AuthPasswordHint": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "AuthRegisterNow": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
     "AuthRegisterSuccessSnackBar": MessageLookupByLibrary.simpleMessage(
