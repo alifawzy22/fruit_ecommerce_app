@@ -36,4 +36,14 @@ class AuthReposImple implements AuthRepos {
       return left(ServerFailure(errMessage: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> loginWithGoogle() async {
+    try {
+      UserEntity model = await firebaseAuthService.loginWithGoogle();
+      return right(model);
+    } catch (e) {
+      return left(ServerFailure(errMessage: e.toString()));
+    }
+  }
 }

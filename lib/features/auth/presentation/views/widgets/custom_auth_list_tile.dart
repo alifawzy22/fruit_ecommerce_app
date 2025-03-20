@@ -5,12 +5,14 @@ import 'package:fruit_ecommerce_app/generated/l10n.dart';
 
 class CustomAuthListTile extends StatelessWidget {
   const CustomAuthListTile(
-      {super.key, required this.provider, required this.imageIcon});
+      {super.key, required this.provider, required this.imageIcon, this.onTap});
   final String provider;
   final String imageIcon;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: onTap,
       titleAlignment: ListTileTitleAlignment.center,
       shape: RoundedRectangleBorder(
         side: BorderSide(color: AppColor.textFormFieldBorderColor),

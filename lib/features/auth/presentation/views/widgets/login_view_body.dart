@@ -1,7 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_ecommerce_app/core/helper_functions/build_snack_bar.dart';
 import 'package:fruit_ecommerce_app/core/utils/assets_images.dart';
+import 'package:fruit_ecommerce_app/core/utils/services/firebase_auth_service.dart';
 import 'package:fruit_ecommerce_app/core/utils/styles.dart';
 import 'package:fruit_ecommerce_app/core/widgets/custom_elevated_button.dart';
 import 'package:fruit_ecommerce_app/core/widgets/custom_modal_progress_hud.dart';
@@ -118,16 +121,22 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   CustomAuthListTile(
                     provider: S.of(context).Google,
                     imageIcon: AssetsImages.goolgeIcon,
+                    onTap: () async {
+                      await FirebaseAuthService().logOutWithGoogle();
+                      await context.read<AuthLoginCubit>().loginWithGoogle();
+                    },
                   ),
                   SizedBox(height: 16),
                   CustomAuthListTile(
                     provider: S.of(context).Apple,
                     imageIcon: AssetsImages.appleIcon,
+                    onTap: () {},
                   ),
                   SizedBox(height: 16),
                   CustomAuthListTile(
                     provider: S.of(context).Facebook,
                     imageIcon: AssetsImages.facebookIcon,
+                    onTap: () {},
                   ),
                 ],
               ),

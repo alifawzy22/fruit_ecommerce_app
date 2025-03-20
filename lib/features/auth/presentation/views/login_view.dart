@@ -5,6 +5,7 @@ import 'package:fruit_ecommerce_app/core/utils/app_routes.dart';
 import 'package:fruit_ecommerce_app/core/utils/localization/localization_cubit.dart';
 import 'package:fruit_ecommerce_app/core/utils/services/service_locator.dart';
 import 'package:fruit_ecommerce_app/features/auth/domain/auth_use_cases/login_with_email_and_password_abstract_usecase.dart';
+import 'package:fruit_ecommerce_app/features/auth/domain/auth_use_cases/login_with_google_abstract_usecase.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/managers/auth_login_cubit/auth_login_cubit.dart';
 import 'package:fruit_ecommerce_app/generated/l10n.dart';
 
@@ -18,7 +19,8 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AuthLoginCubit(
-          serviceLocator<LoginWithEmailAndPasswordAbstractUsecase>()),
+          serviceLocator<LoginWithEmailAndPasswordAbstractUsecase>(),
+          serviceLocator<LoginWithGoogleAbstractUsecase>()),
       child: Scaffold(
         appBar: buildAppBar(
             title: S.of(context).LoginViewTitle,
