@@ -136,7 +136,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   CustomAuthListTile(
                     provider: S.of(context).Facebook,
                     imageIcon: AssetsImages.facebookIcon,
-                    onTap: () {},
+                    onTap: () async {
+                      await context.read<AuthLoginCubit>().loginWithfacebook();
+                    },
                   ),
                 ],
               ),

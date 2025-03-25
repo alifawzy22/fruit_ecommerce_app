@@ -9,6 +9,8 @@ import 'package:fruit_ecommerce_app/features/auth/domain/auth_use_cases/login_wi
 import 'package:fruit_ecommerce_app/features/auth/presentation/managers/auth_login_cubit/auth_login_cubit.dart';
 import 'package:fruit_ecommerce_app/generated/l10n.dart';
 
+import '../../domain/auth_use_cases/login_with_facebook_abstract_usecase.dart'
+    show LoginWithFacebookAbstractUsecase;
 import 'widgets/login_view_body.dart';
 
 class LoginView extends StatelessWidget {
@@ -20,7 +22,8 @@ class LoginView extends StatelessWidget {
     return BlocProvider(
       create: (context) => AuthLoginCubit(
           serviceLocator<LoginWithEmailAndPasswordAbstractUsecase>(),
-          serviceLocator<LoginWithGoogleAbstractUsecase>()),
+          serviceLocator<LoginWithGoogleAbstractUsecase>(),
+          serviceLocator<LoginWithFacebookAbstractUsecase>()),
       child: Scaffold(
         appBar: buildAppBar(
             title: S.of(context).LoginViewTitle,

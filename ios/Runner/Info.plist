@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>BUNDLE_ID</key>
+	<string>com.example.fruitEcommerceApp</string>
+    <key>CLIENT_ID</key>
+	<string>854826227980-498kk4fsfbedkjdskhmtt4nc0u8udvbd.apps.googleusercontent.com</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart'
+    show FacebookAuth, LoginResult;
 import 'package:fruit_ecommerce_app/core/utils/exceptions/firebase_auth_exception.dart';
 import 'package:fruit_ecommerce_app/features/auth/data/auth_entities_models/user_model.dart';
 import 'package:fruit_ecommerce_app/features/auth/domain/auth_entities/user_entity.dart';
@@ -78,5 +80,26 @@ class FirebaseAuthService {
   Future<void> logOutWithGoogle() async {
     await FirebaseAuth.instance.signOut();
     await GoogleSignIn().signOut();
+  }
+
+  Future<UserEntity> loginWithFacebook() async {
+    try {
+      final LoginResult loginResult = await FacebookAuth.instance.login();
+
+      final OAuthCredential facebookAuthCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
+
+      return UserModel.fromFireBase((await FirebaseAuth.instance
+              .signInWithCredential(facebookAuthCredential))
+          .user!);
+    } on FirebaseAuthException catch (e) {
+      throw Exception(
+        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
+      ).toString().replaceAll('Exception: ', '');
+    } catch (e) {
+      throw Exception(S.current.FireBaseUnknownError)
+          .toString()
+          .replaceAll('Exception: ', '');
+    }
   }
 }
