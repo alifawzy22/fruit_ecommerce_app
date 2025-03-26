@@ -2,5 +2,6 @@
 <resources>
     <string name="app_name">fruit_ecommerce_app</string>
     <string name="facebook_app_id">543309325451370</string>
-    <string name="facebook_client_token">5894bbb9568acc54580cf1caafbc01c2</string>
+    <string name="facebook_client_token">64eb760836231c3e246ff2a347fa1109</string>
+    <string name="fb_login_protocol_scheme">fb543309325451370</string>                                     
 </resources>
