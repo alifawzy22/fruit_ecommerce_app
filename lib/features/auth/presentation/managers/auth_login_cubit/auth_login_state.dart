@@ -1,4 +1,4 @@
-import 'package:fruit_ecommerce_app/features/auth/domain/auth_entities/user_entity.dart';
+import 'package:fruit_ecommerce_app/features/auth/data/auth_entities_models/user_model.dart';
 
 abstract class AuthLoginState {}
 
@@ -7,9 +7,9 @@ class AuthLoginInitState extends AuthLoginState {}
 class AuthLoginLoadingState extends AuthLoginState {}
 
 class AuthLoginSuccesstState extends AuthLoginState {
-  final UserEntity userEntity;
+  final UserModel userModel;
 
-  AuthLoginSuccesstState({required this.userEntity});
+  AuthLoginSuccesstState({required this.userModel});
 }
 
 class AuthLoginFailureState extends AuthLoginState {

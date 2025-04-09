@@ -8,6 +8,7 @@ import 'package:fruit_ecommerce_app/core/utils/services/firebase_auth_service.da
 import 'package:fruit_ecommerce_app/core/utils/styles.dart';
 import 'package:fruit_ecommerce_app/core/widgets/custom_elevated_button.dart';
 import 'package:fruit_ecommerce_app/core/widgets/custom_modal_progress_hud.dart';
+import 'package:fruit_ecommerce_app/features/auth/data/auth_entities_models/user_input_model.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/managers/auth_login_cubit/auth_login_cubit.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/managers/auth_login_cubit/auth_login_state.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/views/widgets/custom_auth_text_rich.dart';
@@ -103,8 +104,11 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           formKey.currentState!.save();
                           await BlocProvider.of<AuthLoginCubit>(context)
                               .loginWithEmailandPassword(
-                            userEmail: userEmail,
-                            userPassword: userPassword,
+                            userInputEntity: UserInputModel(
+                              userName: '',
+                              userEmail: userEmail,
+                              userPassword: userPassword,
+                            ),
                           );
                         } else {
                           autovalidateMode = AutovalidateMode.always;

@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:fruit_ecommerce_app/core/utils/errors/failure.dart';
 import 'package:fruit_ecommerce_app/core/utils/services/firebase_auth_service.dart';
+import 'package:fruit_ecommerce_app/features/auth/data/auth_entities_models/user_model.dart';
 import 'package:fruit_ecommerce_app/features/auth/domain/auth_entities/user_entity.dart';
 import 'package:fruit_ecommerce_app/features/auth/domain/auth_repos/auth_repos.dart';
 
@@ -9,15 +10,13 @@ class AuthReposImple implements AuthRepos {
 
   AuthReposImple({required this.firebaseAuthService});
   @override
-  Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword({
-    required UserEntity user,
-    required String userPassword,
+  Future<Either<Failure, UserModel>> createUserWithEmailAndPassword({
+    required UserInputEntity userInputEntity,
   }) async {
     try {
-      UserEntity model =
+      UserModel model =
           await firebaseAuthService.createUserWithEmailAndPassword(
-        userEmail: user.userEmail,
-        userPassword: userPassword,
+        userInputEntity: userInputEntity,
       );
       return right(model);
     } catch (e) {
@@ -26,11 +25,13 @@ class AuthReposImple implements AuthRepos {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> logininWithEmailAndPassword(
-      {required String userEmail, required String userPassword}) async {
+  Future<Either<Failure, UserModel>> logininWithEmailAndPassword({
+    required UserInputEntity userInputEntity,
+  }) async {
     try {
-      UserEntity model = await firebaseAuthService.loginWithEmailAndPassword(
-          userEmail: userEmail, userPassword: userPassword);
+      UserModel model = await firebaseAuthService.loginWithEmailAndPassword(
+        userInputEntity: userInputEntity,
+      );
       return right(model);
     } catch (e) {
       return left(ServerFailure(errMessage: e.toString()));
@@ -38,9 +39,9 @@ class AuthReposImple implements AuthRepos {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> loginWithGoogle() async {
+  Future<Either<Failure, UserModel>> loginWithGoogle() async {
     try {
-      UserEntity model = await firebaseAuthService.loginWithGoogle();
+      UserModel model = await firebaseAuthService.loginWithGoogle();
       return right(model);
     } catch (e) {
       return left(ServerFailure(errMessage: e.toString()));
@@ -48,9 +49,9 @@ class AuthReposImple implements AuthRepos {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> loginWithFacebook() async {
+  Future<Either<Failure, UserModel>> loginWithFacebook() async {
     try {
-      UserEntity model = await firebaseAuthService.loginWithFacebook();
+      UserModel model = await firebaseAuthService.loginWithFacebook();
       return right(model);
     } catch (e) {
       return left(ServerFailure(errMessage: e.toString()));

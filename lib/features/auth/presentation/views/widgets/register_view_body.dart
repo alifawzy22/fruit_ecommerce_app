@@ -130,13 +130,14 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                           if (isCheckBoxChecked) {
                             await BlocProvider.of<AuthRegisterCubit>(context)
                                 .createUserByEmailandPassword(
-                              userEntity: UserEntity(
-                                  userName: fullName, userEmail: email),
-                              userPassword: password,
+                              userEntity: UserInputEntity(
+                                userName: fullName,
+                                userEmail: email,
+                                userPassword: password,
+                              ),
                             );
                           } else {
                             // Show snack bar
-
                             buildSnackBar(
                                 context,
                                 S

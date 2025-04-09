@@ -1,9 +1,11 @@
-class UserEntity {
+class UserInputEntity {
   final String userName;
   final String userEmail;
+  final String userPassword;
 
-  UserEntity({
+  UserInputEntity({
     required this.userName,
     required this.userEmail,
+    required this.userPassword,
   });
 }

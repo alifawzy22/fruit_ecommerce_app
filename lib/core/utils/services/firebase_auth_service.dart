@@ -8,17 +8,16 @@ import 'package:fruit_ecommerce_app/generated/l10n.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthService {
-  Future<UserEntity> createUserWithEmailAndPassword({
-    required String userEmail,
-    required String userPassword,
+  Future<UserModel> createUserWithEmailAndPassword({
+    required UserInputEntity userInputEntity,
   }) async {
     try {
       final UserCredential credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: userEmail,
-        password: userPassword,
+        email: userInputEntity.userEmail,
+        password: userInputEntity.userPassword,
       );
-      return UserModel.fromFireBase(credential.user!);
+      return UserModel.fromFireStore(credential.user!);
     } on FirebaseAuthException catch (e) {
       throw Exception(
         CustomFireBaseAuthException.throwFireBaseError(code: e.code),
@@ -30,17 +29,16 @@ class FirebaseAuthService {
     }
   }
 
-  Future<UserEntity> loginWithEmailAndPassword({
-    required String userEmail,
-    required String userPassword,
+  Future<UserModel> loginWithEmailAndPassword({
+    required UserInputEntity userInputEntity,
   }) async {
     try {
       final UserCredential credential =
           await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: userEmail,
-        password: userPassword,
+        email: userInputEntity.userEmail,
+        password: userInputEntity.userPassword,
       );
-      return UserModel.fromFireBase(credential.user!);
+      return UserModel.fromFireStore(credential.user!);
     } on FirebaseAuthException catch (e) {
       throw Exception(
         CustomFireBaseAuthException.throwFireBaseError(code: e.code),
@@ -52,7 +50,7 @@ class FirebaseAuthService {
     }
   }
 
-  Future<UserEntity> loginWithGoogle() async {
+  Future<UserModel> loginWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
@@ -64,7 +62,7 @@ class FirebaseAuthService {
         idToken: googleAuth?.idToken,
       );
 
-      return UserModel.fromFireBase(
+      return UserModel.fromFireStore(
           (await FirebaseAuth.instance.signInWithCredential(credential)).user!);
     } on FirebaseAuthException catch (e) {
       throw Exception(
@@ -82,16 +80,100 @@ class FirebaseAuthService {
     await GoogleSignIn().signOut();
   }
 
-  Future<UserEntity> loginWithFacebook() async {
+  Future<UserModel> loginWithFacebook() async {
     try {
       final LoginResult loginResult = await FacebookAuth.instance.login();
 
       final OAuthCredential facebookAuthCredential =
           FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
 
-      return UserModel.fromFireBase((await FirebaseAuth.instance
+      return UserModel.fromFireStore((await FirebaseAuth.instance
               .signInWithCredential(facebookAuthCredential))
           .user!);
+    } on FirebaseAuthException catch (e) {
+      throw Exception(
+        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
+      ).toString().replaceAll('Exception: ', '');
+    } catch (e) {
+      throw Exception(S.current.FireBaseUnknownError)
+          .toString()
+          .replaceAll('Exception: ', '');
+    }
+  }
+
+  Future<void> logOutWithFacebook() async {
+    await FirebaseAuth.instance.signOut();
+    await FacebookAuth.instance.logOut();
+  }
+
+  Future<void> resetPassword({
+    required String userEmail,
+  }) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: userEmail);
+    } on FirebaseAuthException catch (e) {
+      throw Exception(
+        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
+      ).toString().replaceAll('Exception: ', '');
+    } catch (e) {
+      throw Exception(S.current.FireBaseUnknownError)
+          .toString()
+          .replaceAll('Exception: ', '');
+    }
+  }
+
+  Future<void> deleteUser() async {
+    try {
+      await FirebaseAuth.instance.currentUser!.delete();
+    } on FirebaseAuthException catch (e) {
+      throw Exception(
+        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
+      ).toString().replaceAll('Exception: ', '');
+    } catch (e) {
+      throw Exception(S.current.FireBaseUnknownError)
+          .toString()
+          .replaceAll('Exception: ', '');
+    }
+  }
+
+  Future<void> updateUserName({
+    required String userName,
+  }) async {
+    try {
+      await FirebaseAuth.instance.currentUser!.updateDisplayName(userName);
+    } on FirebaseAuthException catch (e) {
+      throw Exception(
+        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
+      ).toString().replaceAll('Exception: ', '');
+    } catch (e) {
+      throw Exception(S.current.FireBaseUnknownError)
+          .toString()
+          .replaceAll('Exception: ', '');
+    }
+  }
+
+  Future<void> updateUserEmail({
+    required String userEmail,
+  }) async {
+    try {
+      await FirebaseAuth.instance.currentUser!
+          .verifyBeforeUpdateEmail(userEmail);
+    } on FirebaseAuthException catch (e) {
+      throw Exception(
+        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
+      ).toString().replaceAll('Exception: ', '');
+    } catch (e) {
+      throw Exception(S.current.FireBaseUnknownError)
+          .toString()
+          .replaceAll('Exception: ', '');
+    }
+  }
+
+  Future<void> updateUserPassword({
+    required String userPassword,
+  }) async {
+    try {
+      await FirebaseAuth.instance.currentUser!.updatePassword(userPassword);
     } on FirebaseAuthException catch (e) {
       throw Exception(
         CustomFireBaseAuthException.throwFireBaseError(code: e.code),

@@ -11,20 +11,18 @@ class AuthRegisterCubit extends Cubit<AuthRegisterState> {
       : super(AuthRegisterInitState());
 
   Future<void> createUserByEmailandPassword({
-    required UserEntity userEntity,
-    required String userPassword,
+    required UserInputEntity userEntity,
   }) async {
     emit(AuthRegisterLoadingState());
     var result = await createUserEmailAndPasswordAbstractUsecase
         .createUserEmailAndPasswordUsecase(
-      userEntity: userEntity,
-      userPassword: userPassword,
+      userInputEntity: userEntity,
     );
 
     result.fold((failure) {
       emit(AuthRegisterFailureState(errMessage: failure.errMessage));
     }, (userModel) {
-      emit(AuthRegisterSuccessState(userEntity: userModel));
+      emit(AuthRegisterSuccessState(userModel: userModel));
     });
   }
 }

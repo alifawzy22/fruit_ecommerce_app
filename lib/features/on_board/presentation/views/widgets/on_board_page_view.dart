@@ -8,64 +8,70 @@ import 'package:fruit_ecommerce_app/generated/l10n.dart';
 
 class OnBoardPageView extends StatelessWidget {
   final PageController pageController;
-  const OnBoardPageView({super.key, required this.pageController});
+  const OnBoardPageView({
+    super.key,
+    required this.pageController,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return PageView(
-      controller: pageController,
-      children: [
-        PageViewItem(
-          isSkipActive: pageController.hasClients
-              ? pageController.page!.round() == 0
-              : true,
-          backgroundImage: AssetsImages.pageViewItem1BackGroundImage,
-          image: AssetsImages.pageViewItem1Image,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '${S.of(context).OnBoardItem1Title} ',
-                style: AppStyles.textStyle23,
-              ),
-              Text(
-                isLocaleArabic() ? 'HUB' : 'Fruit',
-                style: isLocaleArabic()
-                    ? AppStyles.textStyle23
-                        .copyWith(color: AppColor.orangeColor)
-                    : AppStyles.textStyle23
-                        .copyWith(color: AppColor.primaryColor),
-              ),
-              Text(
-                isLocaleArabic() ? 'Fruit' : 'HUB',
-                style: isLocaleArabic()
-                    ? AppStyles.textStyle23
-                        .copyWith(color: AppColor.primaryColor)
-                    : AppStyles.textStyle23
-                        .copyWith(color: AppColor.orangeColor),
-              ),
-            ],
+    return SizedBox(
+      child: PageView(
+        controller: pageController,
+        physics: ClampingScrollPhysics(),
+        children: [
+          PageViewItem(
+            isSkipActive: pageController.hasClients
+                ? pageController.page!.round() == 0
+                : true,
+            backgroundImage: AssetsImages.pageViewItem1BackGroundImage,
+            image: AssetsImages.pageViewItem1Image,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '${S.of(context).OnBoardItem1Title} ',
+                  style: AppStyles.textStyle23,
+                ),
+                Text(
+                  isLocaleArabic() ? 'HUB' : 'Fruit',
+                  style: isLocaleArabic()
+                      ? AppStyles.textStyle23
+                          .copyWith(color: AppColor.orangeColor)
+                      : AppStyles.textStyle23
+                          .copyWith(color: AppColor.primaryColor),
+                ),
+                Text(
+                  isLocaleArabic() ? 'Fruit' : 'HUB',
+                  style: isLocaleArabic()
+                      ? AppStyles.textStyle23
+                          .copyWith(color: AppColor.primaryColor)
+                      : AppStyles.textStyle23
+                          .copyWith(color: AppColor.orangeColor),
+                ),
+              ],
+            ),
+            subTitle: S.of(context).OnBoardItem1SubTitle,
           ),
-          subTitle: S.of(context).OnBoardItem1SubTitle,
-        ),
-        PageViewItem(
-          isSkipActive: pageController.hasClients
-              ? pageController.page!.round() == 0
-              : true,
-          backgroundImage: AssetsImages.pageViewItem2BackGroundImage,
-          image: AssetsImages.pageViewItem2Image,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                S.of(context).OnBoardItem2Title,
-                style: AppStyles.textStyle23,
-              ),
-            ],
+          PageViewItem(
+            isSkipActive: pageController.hasClients
+                ? pageController.page!.round() == 0
+                : true,
+            backgroundImage: AssetsImages.pageViewItem2BackGroundImage,
+            image: AssetsImages.pageViewItem2Image,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  S.of(context).OnBoardItem2Title,
+                  style: AppStyles.textStyle23,
+                ),
+              ],
+            ),
+            subTitle: S.of(context).OnBoardItem2SubTitle,
           ),
-          subTitle: S.of(context).OnBoardItem2SubTitle,
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

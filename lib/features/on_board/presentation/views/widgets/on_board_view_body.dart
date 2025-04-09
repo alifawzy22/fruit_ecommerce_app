@@ -40,49 +40,53 @@ class _OnBoardViewBodyState extends State<OnBoardViewBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
+        child: CustomScrollView(
+          slivers: [
+            SliverFillRemaining(
               child: OnBoardPageView(
                 pageController: pageController,
               ),
             ),
-            SizedBox(height: 64),
-            DotsIndicator(
-              dotsCount: 2,
-              animate: true,
-              animationDuration: Duration(milliseconds: 250),
-              decorator: DotsDecorator(
-                activeColor: AppColor.primaryColor,
-                color: currentIndex != 0
-                    ? AppColor.primaryColor
-                    : AppColor.primaryColor.withValues(alpha: 0.5),
-              ),
-            ),
-            SizedBox(height: 29),
-            Visibility(
-              visible: currentIndex != 0,
-              maintainSize: true,
-              maintainAnimation: true,
-              maintainState: true,
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: CustomElevatedButton(
-                  text: S.of(context).OnBoardStartButton,
-                  onTap: () async {
-                    await Prefs.setBool(kIsOnBoardViewed, true);
-
-                    Navigator.pushReplacementNamed(
-                      // ignore: use_build_context_synchronously
-                      context,
-                      LoginView.routeName,
-                    );
-                  },
+            SliverToBoxAdapter(child: SizedBox(height: 64)),
+            SliverToBoxAdapter(
+              child: DotsIndicator(
+                dotsCount: 2,
+                animate: true,
+                animationDuration: Duration(milliseconds: 250),
+                decorator: DotsDecorator(
+                  activeColor: AppColor.primaryColor,
+                  color: currentIndex != 0
+                      ? AppColor.primaryColor
+                      : AppColor.primaryColor.withValues(alpha: 0.5),
                 ),
               ),
             ),
-            SizedBox(height: 43),
+            SliverToBoxAdapter(child: SizedBox(height: 29)),
+            SliverToBoxAdapter(
+              child: Visibility(
+                visible: currentIndex != 0,
+                maintainSize: true,
+                maintainAnimation: true,
+                maintainState: true,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: CustomElevatedButton(
+                    text: S.of(context).OnBoardStartButton,
+                    onTap: () async {
+                      await Prefs.setBool(kIsOnBoardViewed, true);
+
+                      Navigator.pushReplacementNamed(
+                        // ignore: use_build_context_synchronously
+                        context,
+                        LoginView.routeName,
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(child: SizedBox(height: 43)),
           ],
         ),
       ),
