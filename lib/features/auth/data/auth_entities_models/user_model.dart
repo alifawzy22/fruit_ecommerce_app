@@ -17,4 +17,12 @@ class UserModel {
       userID: user.uid,
     );
   }
+
+  Map<String, dynamic> toFireStore() {
+    return {
+      'userName': userName,
+      'userEmail': userEmail,
+      'userID': userID,
+    };
+  }
 }

@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_cloud_firestore/firebase_cloud_firestore.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart'
     show FacebookAuth, LoginResult;
+import 'package:fruit_ecommerce_app/core/utils/end_points_names.dart';
 import 'package:fruit_ecommerce_app/core/utils/exceptions/firebase_auth_exception.dart';
 import 'package:fruit_ecommerce_app/features/auth/data/auth_entities_models/user_model.dart';
 import 'package:fruit_ecommerce_app/features/auth/domain/auth_entities/user_entity.dart';
@@ -8,6 +10,24 @@ import 'package:fruit_ecommerce_app/generated/l10n.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthService {
+  Future<void> deleteUserAccount() async {
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+
+      if (user != null) {
+        await user.delete();
+      }
+    } on FirebaseAuthException catch (e) {
+      throw Exception(
+        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
+      ).toString().replaceAll('Exception: ', '');
+    } catch (e) {
+      throw Exception(S.current.FireBaseUnknownError)
+          .toString()
+          .replaceAll('Exception: ', '');
+    }
+  }
+
   Future<UserModel> createUserWithEmailAndPassword({
     required UserInputEntity userInputEntity,
   }) async {
@@ -18,6 +38,66 @@ class FirebaseAuthService {
         password: userInputEntity.userPassword,
       );
       return UserModel.fromFireStore(credential.user!);
+    } on FirebaseAuthException catch (e) {
+      throw Exception(
+        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
+      ).toString().replaceAll('Exception: ', '');
+    } catch (e) {
+      throw Exception(S.current.FireBaseUnknownError)
+          .toString()
+          .replaceAll('Exception: ', '');
+    }
+  }
+
+  Future<void> addUser({required UserModel usermodel}) async {
+    await FirebaseFirestore.instance
+        .collection(EndPointsNames.userCollection)
+        .doc(
+          usermodel.userID,
+        )
+        .set(
+          usermodel.toFireStore(),
+        );
+  }
+
+  Future<UserModel> getUser() async {
+    try {
+      final DocumentSnapshot<Map<String, dynamic>> userDocument =
+          await FirebaseFirestore.instance
+              .collection(EndPointsNames.userCollection)
+              .doc(
+                FirebaseAuth.instance.currentUser!.uid,
+              )
+              .get();
+
+      if (userDocument.exists) {
+        return UserModel(
+          userName: '',
+          userEmail: '',
+          userID: '',
+        );
+      } else {
+        throw Exception(S.current.FireBaseUserNotFound);
+      }
+    } on FirebaseAuthException catch (e) {
+      throw Exception(
+        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
+      ).toString().replaceAll('Exception: ', '');
+    } catch (e) {
+      throw Exception(S.current.FireBaseUnknownError)
+          .toString()
+          .replaceAll('Exception: ', '');
+    }
+  }
+
+  Future<void> deleteUser() async {
+    try {
+      await FirebaseFirestore.instance
+          .collection(EndPointsNames.userCollection)
+          .doc(
+            FirebaseAuth.instance.currentUser!.uid,
+          )
+          .delete();
     } on FirebaseAuthException catch (e) {
       throw Exception(
         CustomFireBaseAuthException.throwFireBaseError(code: e.code),
@@ -111,20 +191,6 @@ class FirebaseAuthService {
   }) async {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: userEmail);
-    } on FirebaseAuthException catch (e) {
-      throw Exception(
-        CustomFireBaseAuthException.throwFireBaseError(code: e.code),
-      ).toString().replaceAll('Exception: ', '');
-    } catch (e) {
-      throw Exception(S.current.FireBaseUnknownError)
-          .toString()
-          .replaceAll('Exception: ', '');
-    }
-  }
-
-  Future<void> deleteUser() async {
-    try {
-      await FirebaseAuth.instance.currentUser!.delete();
     } on FirebaseAuthException catch (e) {
       throw Exception(
         CustomFireBaseAuthException.throwFireBaseError(code: e.code),

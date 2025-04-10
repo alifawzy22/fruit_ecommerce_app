@@ -8,6 +8,10 @@ abstract class AuthRepos {
     required UserInputEntity userInputEntity,
   });
 
+  Future<void> addUser({required UserModel usermodel});
+  Future<UserModel> getUser();
+  Future<void> deleteUser();
+
   Future<Either<Failure, UserModel>> logininWithEmailAndPassword(
       {required UserInputEntity userInputEntity});
 
