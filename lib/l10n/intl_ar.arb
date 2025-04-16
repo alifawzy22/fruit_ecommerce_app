@@ -49,5 +49,8 @@
     "requiredFiled":"{name} يجب إدخالة.",
     "RegisterViewPleaseAcceptTermsAndConditions":"برجاء الموافقة علي الشروط والأحكام.",
     "AuthRegisterSuccessSnackBar":"تم إنشاء المستخدم بنجاح.",
-    "AuthLoginSuccessSnackBar":"تم تسجيل الدخول بنجاح."
+    "AuthLoginSuccessSnackBar":"تم تسجيل الدخول بنجاح.",
+    "GoodMorning":"صباح الخير!.."
+
+    
 }

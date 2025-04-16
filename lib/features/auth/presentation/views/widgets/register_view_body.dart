@@ -32,6 +32,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
       listener: (context, state) {
         if (state is AuthRegisterSuccessState) {
           buildSnackBar(context, S.of(context).AuthRegisterSuccessSnackBar);
+          Navigator.pop(context);
         } else if (state is AuthRegisterFailureState) {
           buildSnackBar(context, state.errMessage);
         }

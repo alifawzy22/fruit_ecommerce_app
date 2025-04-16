@@ -49,8 +49,7 @@
     "requiredFiled":"{name} is required.",
     "RegisterViewPleaseAcceptTermsAndConditions":"Please accept terms and conditions.",
     "AuthRegisterSuccessSnackBar":"Create User Successfully",
-    "AuthLoginSuccessSnackBar":"Login Successfully"
-
-
-
+    "AuthLoginSuccessSnackBar":"Login Successfully",
+    "GoodMorning":"Good Morning!.."
+    
 }

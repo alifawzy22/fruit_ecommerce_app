@@ -2,9 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_ecommerce_app/constants.dart';
 import 'package:fruit_ecommerce_app/core/helper_functions/build_snack_bar.dart';
 import 'package:fruit_ecommerce_app/core/utils/assets_images.dart';
 import 'package:fruit_ecommerce_app/core/utils/services/firebase_auth_service.dart';
+import 'package:fruit_ecommerce_app/core/utils/services/shared_preferences_singelton.dart';
 import 'package:fruit_ecommerce_app/core/utils/styles.dart';
 import 'package:fruit_ecommerce_app/core/widgets/custom_elevated_button.dart';
 import 'package:fruit_ecommerce_app/core/widgets/custom_modal_progress_hud.dart';
@@ -14,6 +16,7 @@ import 'package:fruit_ecommerce_app/features/auth/presentation/managers/auth_log
 import 'package:fruit_ecommerce_app/features/auth/presentation/views/widgets/custom_auth_text_rich.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/views/widgets/custom_or_row_divider.dart';
 import 'package:fruit_ecommerce_app/features/auth/presentation/views/widgets/custom_text_form_field.dart';
+import 'package:fruit_ecommerce_app/features/home/presentation/views/home_view.dart';
 import 'package:fruit_ecommerce_app/generated/l10n.dart';
 
 import 'custom_auth_list_tile.dart';
@@ -35,7 +38,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     return BlocConsumer<AuthLoginCubit, AuthLoginState>(
       listener: (context, state) {
         if (state is AuthLoginSuccesstState) {
-          buildSnackBar(context, S.of(context).AuthLoginSuccessSnackBar);
+          Prefs.setBool(kUserLoggedIn, true);
+
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            HomeView.routeName,
+            (route) => false,
+          );
         } else if (state is AuthLoginFailureState) {
           buildSnackBar(context, state.errMessage);
         }

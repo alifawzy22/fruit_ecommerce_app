@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_cloud_firestore/firebase_cloud_firestore.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart'
     show FacebookAuth, LoginResult;
+import 'package:fruit_ecommerce_app/constants.dart';
 import 'package:fruit_ecommerce_app/core/utils/end_points_names.dart';
 import 'package:fruit_ecommerce_app/core/utils/exceptions/firebase_auth_exception.dart';
+import 'package:fruit_ecommerce_app/core/utils/services/shared_preferences_singelton.dart';
 import 'package:fruit_ecommerce_app/features/auth/data/auth_entities_models/user_model.dart';
 import 'package:fruit_ecommerce_app/features/auth/domain/auth_entities/user_entity.dart';
 import 'package:fruit_ecommerce_app/generated/l10n.dart';
@@ -72,9 +76,9 @@ class FirebaseAuthService {
 
       if (userDocument.exists) {
         return UserModel(
-          userName: '',
-          userEmail: '',
-          userID: '',
+          userName: userDocument.data()!['userName'] ?? '',
+          userEmail: userDocument.data()!['userEmail'] ?? '',
+          userID: userDocument.data()!['userID'] ?? '',
         );
       } else {
         throw Exception(S.current.FireBaseUserNotFound);
@@ -118,6 +122,13 @@ class FirebaseAuthService {
         email: userInputEntity.userEmail,
         password: userInputEntity.userPassword,
       );
+      // Get User Data and Save it
+      UserModel userModel = await getUser();
+
+      var userData = jsonEncode(userModel.toFireStore());
+
+      await Prefs.setString(kUserData, userData);
+
       return UserModel.fromFireStore(credential.user!);
     } on FirebaseAuthException catch (e) {
       throw Exception(

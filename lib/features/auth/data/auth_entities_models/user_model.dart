@@ -25,4 +25,12 @@ class UserModel {
       'userID': userID,
     };
   }
+
+  factory UserModel.fromJson(Map<String, dynamic> json) {
+    return UserModel(
+      userName: json['userName'] as String,
+      userEmail: json['userEmail'] as String,
+      userID: json['userID'] as String,
+    );
+  }
 }
