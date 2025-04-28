@@ -555,10 +555,10 @@ class S {
     return Intl.message('Eid Offers', name: 'EidOffers', desc: '', args: []);
   }
 
-  /// `Discount {discount}%`
+  /// `{discount}% OFF`
   String OffersDiscount(Object discount) {
     return Intl.message(
-      'Discount $discount%',
+      '$discount% OFF',
       name: 'OffersDiscount',
       desc: '',
       args: [discount],
@@ -572,6 +572,31 @@ class S {
       name: 'ShoppingNow',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Top-Selling Products`
+  String get MorePurchases {
+    return Intl.message(
+      'Top-Selling Products',
+      name: 'MorePurchases',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More`
+  String get More {
+    return Intl.message('More', name: 'More', desc: '', args: []);
+  }
+
+  /// `{currency} / {unit}`
+  String CurrencyPerUnit(Object currency, Object unit) {
+    return Intl.message(
+      '$currency / $unit',
+      name: 'CurrencyPerUnit',
+      desc: '',
+      args: [currency, unit],
     );
   }
 }

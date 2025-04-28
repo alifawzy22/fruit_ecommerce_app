@@ -20,11 +20,13 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(provider) => "Login With ${provider}";
+  static String m0(currency, unit) => "${currency} / ${unit}";
 
-  static String m1(discount) => "Discount ${discount}%";
+  static String m1(provider) => "Login With ${provider}";
 
-  static String m2(name) => "${name} is required.";
+  static String m2(discount) => "${discount}% OFF";
+
+  static String m3(name) => "${name} is required.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -49,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Create User Successfully",
     ),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "CurrencyPerUnit": m0,
     "EidOffers": MessageLookupByLibrary.simpleMessage("Eid Offers"),
     "Facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
     "FireBaseAccountExistWithDifferntCredential":
@@ -128,8 +131,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "Google": MessageLookupByLibrary.simpleMessage("Google"),
     "HintSearch": MessageLookupByLibrary.simpleMessage("Search"),
     "LoginViewTitle": MessageLookupByLibrary.simpleMessage("Login"),
-    "LoginWithProvider": m0,
-    "OffersDiscount": m1,
+    "LoginWithProvider": m1,
+    "More": MessageLookupByLibrary.simpleMessage("More"),
+    "MorePurchases": MessageLookupByLibrary.simpleMessage(
+      "Top-Selling Products",
+    ),
+    "OffersDiscount": m2,
     "OnBoardItem1SubTitle": MessageLookupByLibrary.simpleMessage(
       "Enjoy Shopping with FruitHUB. Explore Wide Variety of Fresh Fruits and get the best offers with high quality",
     ),
@@ -155,6 +162,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "RegisterViewTitle": MessageLookupByLibrary.simpleMessage("Register"),
     "ShoppingNow": MessageLookupByLibrary.simpleMessage("Shopping Now"),
-    "requiredFiled": m2,
+    "requiredFiled": m3,
   };
 }

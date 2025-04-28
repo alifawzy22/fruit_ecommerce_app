@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fruit_ecommerce_app/core/helper_functions/app_layout.dart';
 import 'package:fruit_ecommerce_app/core/helper_functions/get_current_locale.dart';
 import 'package:fruit_ecommerce_app/core/utils/app_color.dart';
-import 'package:fruit_ecommerce_app/core/utils/assets_images.dart';
 import 'package:fruit_ecommerce_app/core/utils/styles.dart';
 import 'package:fruit_ecommerce_app/core/widgets/custom_elevated_button.dart';
 import 'package:fruit_ecommerce_app/features/home/presentation/views/widgets/curved_background.dart';
@@ -27,7 +26,7 @@ class HomeViewOffersItem extends StatelessWidget {
           width: AppLayout.isTablet(context)
               ? AppLayout.getWidth(context) * 0.5
               : AppLayout.getWidth(context) * 0.85,
-          height: AppLayout.getHeight(context) * 0.25,
+          height: AppLayout.getHeight(context) * 0.2,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
           ),
@@ -56,8 +55,21 @@ class HomeViewOffersItem extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(4),
+              Positioned(
+                top: 0,
+                bottom: 0,
+                right: isLocaleArabic()
+                    ? 0
+                    : (AppLayout.isTablet(context)
+                            ? ((AppLayout.getWidth(context) * 0.5) / 2)
+                            : AppLayout.getWidth(context) * 0.85) /
+                        2,
+                left: isLocaleArabic()
+                    ? (AppLayout.isTablet(context)
+                            ? ((AppLayout.getWidth(context) * 0.5) / 2)
+                            : AppLayout.getWidth(context) * 0.85) /
+                        2
+                    : 0,
                 child: CurvedBackground(
                   curveOnLeft: isLocaleArabic() ? true : false,
                   color: index.isEven
@@ -66,14 +78,12 @@ class HomeViewOffersItem extends StatelessWidget {
                   width: AppLayout.isTablet(context)
                       ? (AppLayout.getWidth(context) * 0.5) / 2
                       : (AppLayout.getWidth(context) * 0.85) / 2,
-                  height: AppLayout.getHeight(context) * 0.25,
+                  height: AppLayout.getHeight(context) * 0.2,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 16),
+                    padding: const EdgeInsets.all(16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 8),
                         Text(
                           S.of(context).EidOffers,
                           style: AppStyles.textStyle13.copyWith(
@@ -81,7 +91,7 @@ class HomeViewOffersItem extends StatelessWidget {
                         ),
                         Spacer(),
                         Text(
-                          S.of(context).OffersDiscount(50),
+                          S.of(context).OffersDiscount(80),
                           style: AppStyles.textStyle19
                               .copyWith(color: Colors.white),
                         ),

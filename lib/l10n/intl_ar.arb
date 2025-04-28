@@ -54,7 +54,10 @@
     "HintSearch":"أبحث عن...",
     "EidOffers":"عروض العيد",
     "OffersDiscount":"خصم {discount}%",
-     "ShoppingNow":"تسوق الآن"
+     "ShoppingNow":"تسوق الآن",
+     "MorePurchases":"الأكثر مبيعاً",
+     "More" :"المزيد",
+    "CurrencyPerUnit":"{currency} / {unit}"
 
     
 }

@@ -53,7 +53,10 @@
     "GoodMorning":"Good Morning!..",
     "HintSearch":"Search",
     "EidOffers":"Eid Offers",
-    "OffersDiscount":"Discount {discount}%",
-    "ShoppingNow":"Shopping Now"
+    "OffersDiscount":"{discount}% OFF",
+    "ShoppingNow":"Shopping Now",
+    "MorePurchases":"Top-Selling Products",
+    "More" :"More",
+    "CurrencyPerUnit":"{currency} / {unit}"
     
 }

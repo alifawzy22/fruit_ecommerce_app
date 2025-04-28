@@ -20,11 +20,13 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(provider) => "تسجيل بواسطة ${provider}";
+  static String m0(currency, unit) => "${currency} / ${unit}";
 
-  static String m1(discount) => "خصم ${discount}%";
+  static String m1(provider) => "تسجيل بواسطة ${provider}";
 
-  static String m2(name) => "${name} يجب إدخالة.";
+  static String m2(discount) => "خصم ${discount}%";
+
+  static String m3(name) => "${name} يجب إدخالة.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -51,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم إنشاء المستخدم بنجاح.",
     ),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "CurrencyPerUnit": m0,
     "EidOffers": MessageLookupByLibrary.simpleMessage("عروض العيد"),
     "Facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
     "FireBaseAccountExistWithDifferntCredential":
@@ -130,8 +133,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "Google": MessageLookupByLibrary.simpleMessage("جوجل"),
     "HintSearch": MessageLookupByLibrary.simpleMessage("أبحث عن..."),
     "LoginViewTitle": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
-    "LoginWithProvider": m0,
-    "OffersDiscount": m1,
+    "LoginWithProvider": m1,
+    "More": MessageLookupByLibrary.simpleMessage("المزيد"),
+    "MorePurchases": MessageLookupByLibrary.simpleMessage("الأكثر مبيعاً"),
+    "OffersDiscount": m2,
     "OnBoardItem1SubTitle": MessageLookupByLibrary.simpleMessage(
       "أكتشف تجربة تسوف فريدة مع FruitHUB. أستكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة وأحصل علي أفضل العروض والجودة العالية",
     ),
@@ -155,6 +160,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "RegisterViewTitle": MessageLookupByLibrary.simpleMessage("حساب جديد"),
     "ShoppingNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
-    "requiredFiled": m2,
+    "requiredFiled": m3,
   };
 }
