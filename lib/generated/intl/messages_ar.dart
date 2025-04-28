@@ -22,7 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(provider) => "تسجيل بواسطة ${provider}";
 
-  static String m1(name) => "${name} يجب إدخالة.";
+  static String m1(discount) => "خصم ${discount}%";
+
+  static String m2(name) => "${name} يجب إدخالة.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -49,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم إنشاء المستخدم بنجاح.",
     ),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "EidOffers": MessageLookupByLibrary.simpleMessage("عروض العيد"),
     "Facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
     "FireBaseAccountExistWithDifferntCredential":
         MessageLookupByLibrary.simpleMessage(
@@ -123,9 +126,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "FireBaseWrongPassword": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير صحيحة",
     ),
+    "GoodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير!.."),
     "Google": MessageLookupByLibrary.simpleMessage("جوجل"),
+    "HintSearch": MessageLookupByLibrary.simpleMessage("أبحث عن..."),
     "LoginViewTitle": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "LoginWithProvider": m0,
+    "OffersDiscount": m1,
     "OnBoardItem1SubTitle": MessageLookupByLibrary.simpleMessage(
       "أكتشف تجربة تسوف فريدة مع FruitHUB. أستكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة وأحصل علي أفضل العروض والجودة العالية",
     ),
@@ -148,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "من خلال إنشاء حساب ، فإنك توافق علي ",
     ),
     "RegisterViewTitle": MessageLookupByLibrary.simpleMessage("حساب جديد"),
-    "requiredFiled": m1,
+    "ShoppingNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
+    "requiredFiled": m2,
   };
 }

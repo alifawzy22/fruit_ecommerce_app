@@ -28,9 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -529,6 +530,46 @@ class S {
     return Intl.message(
       'Login Successfully',
       name: 'AuthLoginSuccessSnackBar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good Morning!..`
+  String get GoodMorning {
+    return Intl.message(
+      'Good Morning!..',
+      name: 'GoodMorning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get HintSearch {
+    return Intl.message('Search', name: 'HintSearch', desc: '', args: []);
+  }
+
+  /// `Eid Offers`
+  String get EidOffers {
+    return Intl.message('Eid Offers', name: 'EidOffers', desc: '', args: []);
+  }
+
+  /// `Discount {discount}%`
+  String OffersDiscount(Object discount) {
+    return Intl.message(
+      'Discount $discount%',
+      name: 'OffersDiscount',
+      desc: '',
+      args: [discount],
+    );
+  }
+
+  /// `Shopping Now`
+  String get ShoppingNow {
+    return Intl.message(
+      'Shopping Now',
+      name: 'ShoppingNow',
       desc: '',
       args: [],
     );

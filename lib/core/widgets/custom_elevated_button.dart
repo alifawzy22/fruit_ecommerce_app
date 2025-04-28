@@ -5,10 +5,22 @@ import 'package:fruit_ecommerce_app/core/utils/styles.dart';
 class CustomElevatedButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
+  final TextStyle? textStyle;
+  final double? raduis;
+  final double? padding;
+  final VisualDensity? visualDensity;
   const CustomElevatedButton({
     super.key,
     required this.text,
     required this.onTap,
+    this.backgroundColor,
+    this.foregroundColor,
+    this.textStyle,
+    this.raduis,
+    this.padding,
+    this.visualDensity,
   });
 
   @override
@@ -16,12 +28,13 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.all(12),
-        foregroundColor: Colors.white,
-        backgroundColor: AppColor.primaryColor,
-        textStyle: AppStyles.textStyle16,
+        visualDensity: visualDensity,
+        padding: EdgeInsets.all(padding ?? 12),
+        foregroundColor: foregroundColor ?? Colors.white,
+        backgroundColor: backgroundColor ?? AppColor.primaryColor,
+        textStyle: textStyle ?? AppStyles.textStyle16,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(raduis ?? 16),
         ),
       ),
       child: Text(

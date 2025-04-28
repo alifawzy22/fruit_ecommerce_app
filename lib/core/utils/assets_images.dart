@@ -17,4 +17,12 @@ class AssetsImages {
   static const String checkIcon = 'assets/images/check_icon.svg';
   static const String imageProfile = 'assets/images/imageProfile.png';
   static const String notificationIcon = 'assets/images/notification.svg';
+  static const String filterIcon = 'assets/images/filterIcon.svg';
+  static const String heartIcon = 'assets/images/heartIcon.svg';
+  static const String searchIcon = 'assets/images/searchIcon.svg';
+  static const String testImage = 'assets/images/testImage.png';
+  static const String homeViewOffersCardBG =
+      'assets/images/homeViewOffersCardBG.png';
+  static const String homeViewOffersCardBGReverse =
+      'assets/images/homeViewOffersCardBGReverse.png';
 }

@@ -8,4 +8,5 @@ abstract class AppColor {
   static const Color textFormFieldBorderColor = Color(0xFFE6E9EA);
   static const Color textFormFieldFillColor = Color(0xFFF9FAFA);
   static const Color notificationBackGroundColor = Color(0xFFEEF8ED);
+  static const Color homeViewOfferCardBGColor = Color(0xFF5DB957);
 }

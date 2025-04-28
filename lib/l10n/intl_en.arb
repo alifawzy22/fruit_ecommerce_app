@@ -50,6 +50,10 @@
     "RegisterViewPleaseAcceptTermsAndConditions":"Please accept terms and conditions.",
     "AuthRegisterSuccessSnackBar":"Create User Successfully",
     "AuthLoginSuccessSnackBar":"Login Successfully",
-    "GoodMorning":"Good Morning!.."
+    "GoodMorning":"Good Morning!..",
+    "HintSearch":"Search",
+    "EidOffers":"Eid Offers",
+    "OffersDiscount":"Discount {discount}%",
+    "ShoppingNow":"Shopping Now"
     
 }

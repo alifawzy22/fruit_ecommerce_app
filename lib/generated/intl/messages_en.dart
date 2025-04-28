@@ -22,7 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(provider) => "Login With ${provider}";
 
-  static String m1(name) => "${name} is required.";
+  static String m1(discount) => "Discount ${discount}%";
+
+  static String m2(name) => "${name} is required.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -47,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Create User Successfully",
     ),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "EidOffers": MessageLookupByLibrary.simpleMessage("Eid Offers"),
     "Facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
     "FireBaseAccountExistWithDifferntCredential":
         MessageLookupByLibrary.simpleMessage(
@@ -121,9 +124,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "FireBaseWrongPassword": MessageLookupByLibrary.simpleMessage(
       "Wrong Password",
     ),
+    "GoodMorning": MessageLookupByLibrary.simpleMessage("Good Morning!.."),
     "Google": MessageLookupByLibrary.simpleMessage("Google"),
+    "HintSearch": MessageLookupByLibrary.simpleMessage("Search"),
     "LoginViewTitle": MessageLookupByLibrary.simpleMessage("Login"),
     "LoginWithProvider": m0,
+    "OffersDiscount": m1,
     "OnBoardItem1SubTitle": MessageLookupByLibrary.simpleMessage(
       "Enjoy Shopping with FruitHUB. Explore Wide Variety of Fresh Fruits and get the best offers with high quality",
     ),
@@ -148,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "By creating an account, you agree to our ",
     ),
     "RegisterViewTitle": MessageLookupByLibrary.simpleMessage("Register"),
-    "requiredFiled": m1,
+    "ShoppingNow": MessageLookupByLibrary.simpleMessage("Shopping Now"),
+    "requiredFiled": m2,
   };
 }

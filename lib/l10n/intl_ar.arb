@@ -50,7 +50,11 @@
     "RegisterViewPleaseAcceptTermsAndConditions":"برجاء الموافقة علي الشروط والأحكام.",
     "AuthRegisterSuccessSnackBar":"تم إنشاء المستخدم بنجاح.",
     "AuthLoginSuccessSnackBar":"تم تسجيل الدخول بنجاح.",
-    "GoodMorning":"صباح الخير!.."
+    "GoodMorning":"صباح الخير!..",
+    "HintSearch":"أبحث عن...",
+    "EidOffers":"عروض العيد",
+    "OffersDiscount":"خصم {discount}%",
+     "ShoppingNow":"تسوق الآن"
 
     
 }
