@@ -11,4 +11,5 @@ abstract class AppColor {
   static const Color notificationBackGroundColor = Color(0xFFEEF8ED);
   static const Color homeViewOfferCardBGColor = Color(0xFF5DB957);
   static const Color fruitItemBGColor = Color(0xFFF3F5F7);
+  static const Color homeViewActiveBGColor = Color(0xFFEEEEEE);
 }

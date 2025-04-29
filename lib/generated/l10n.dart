@@ -599,6 +599,26 @@ class S {
       args: [currency, unit],
     );
   }
+
+  /// `Home`
+  String get Home {
+    return Intl.message('Home', name: 'Home', desc: '', args: []);
+  }
+
+  /// `Categories`
+  String get Categories {
+    return Intl.message('Categories', name: 'Categories', desc: '', args: []);
+  }
+
+  /// `Cart`
+  String get Cart {
+    return Intl.message('Cart', name: 'Cart', desc: '', args: []);
+  }
+
+  /// `Profile`
+  String get Profile {
+    return Intl.message('Profile', name: 'Profile', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

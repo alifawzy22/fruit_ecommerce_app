@@ -25,4 +25,16 @@ class AssetsImages {
       'assets/images/homeViewOffersCardBG.png';
   static const String homeViewOffersCardBGReverse =
       'assets/images/homeViewOffersCardBGReverse.png';
+
+  static const String homeFilledIcon = 'assets/images/HomeFilledIcon.svg';
+  static const String homeOutlinedIcon = 'assets/images/HomeOutlinedIcon.svg';
+  static const String profileFilledIcon = 'assets/images/ProfileFilledIcon.svg';
+  static const String profileOutlinedIcon =
+      'assets/images/ProfileOutlinedIcon.svg';
+  static const String productsFilledIcon =
+      'assets/images/ProductsFilledIcon.svg';
+  static const String productsOutlinedIcon =
+      'assets/images/ProductsOutlinedIcon.svg';
+  static const String cartFilledIcon = 'assets/images/cartFilledIcon.svg';
+  static const String cartOutlinedIcon = 'assets/images/CartOutlinedIcon.svg';
 }

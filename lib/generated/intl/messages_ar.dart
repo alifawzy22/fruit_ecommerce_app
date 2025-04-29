@@ -52,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "AuthRegisterSuccessSnackBar": MessageLookupByLibrary.simpleMessage(
       "تم إنشاء المستخدم بنجاح.",
     ),
+    "Cart": MessageLookupByLibrary.simpleMessage("سله التسوق"),
+    "Categories": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "CurrencyPerUnit": m0,
     "EidOffers": MessageLookupByLibrary.simpleMessage("عروض العيد"),
@@ -132,6 +134,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "GoodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير!.."),
     "Google": MessageLookupByLibrary.simpleMessage("جوجل"),
     "HintSearch": MessageLookupByLibrary.simpleMessage("أبحث عن..."),
+    "Home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "LoginViewTitle": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
     "LoginWithProvider": m1,
     "More": MessageLookupByLibrary.simpleMessage("المزيد"),
@@ -148,6 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "OnBoardNextStep": MessageLookupByLibrary.simpleMessage("تخط"),
     "OnBoardStartButton": MessageLookupByLibrary.simpleMessage("أبدأ الآن"),
     "Or": MessageLookupByLibrary.simpleMessage("أو"),
+    "Profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "RegisterViewPleaseAcceptTermsAndConditions":
         MessageLookupByLibrary.simpleMessage(
           "برجاء الموافقة علي الشروط والأحكام.",

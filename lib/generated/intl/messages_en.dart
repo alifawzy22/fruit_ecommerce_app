@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "AuthRegisterSuccessSnackBar": MessageLookupByLibrary.simpleMessage(
       "Create User Successfully",
     ),
+    "Cart": MessageLookupByLibrary.simpleMessage("Cart"),
+    "Categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
     "CurrencyPerUnit": m0,
     "EidOffers": MessageLookupByLibrary.simpleMessage("Eid Offers"),
@@ -130,6 +132,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "GoodMorning": MessageLookupByLibrary.simpleMessage("Good Morning!.."),
     "Google": MessageLookupByLibrary.simpleMessage("Google"),
     "HintSearch": MessageLookupByLibrary.simpleMessage("Search"),
+    "Home": MessageLookupByLibrary.simpleMessage("Home"),
     "LoginViewTitle": MessageLookupByLibrary.simpleMessage("Login"),
     "LoginWithProvider": m1,
     "More": MessageLookupByLibrary.simpleMessage("More"),
@@ -150,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "OnBoardNextStep": MessageLookupByLibrary.simpleMessage("Skip"),
     "OnBoardStartButton": MessageLookupByLibrary.simpleMessage("Start Now"),
     "Or": MessageLookupByLibrary.simpleMessage("OR"),
+    "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "RegisterViewPleaseAcceptTermsAndConditions":
         MessageLookupByLibrary.simpleMessage(
           "Please accept terms and conditions.",
