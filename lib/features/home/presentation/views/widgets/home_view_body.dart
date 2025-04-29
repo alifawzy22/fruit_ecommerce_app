@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_ecommerce_app/core/utils/styles.dart';
 import 'package:fruit_ecommerce_app/features/home/presentation/views/widgets/custom_home_view_search_text_field.dart';
-import 'package:fruit_ecommerce_app/features/home/presentation/views/widgets/home_view_fruit_item.dart';
 import 'package:fruit_ecommerce_app/features/home/presentation/views/widgets/home_view_grid_view_fruit_item.dart';
 import 'package:fruit_ecommerce_app/features/home/presentation/views/widgets/home_view_offers_list_item.dart';
 import 'package:fruit_ecommerce_app/generated/l10n.dart';
@@ -16,54 +15,43 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
         slivers: [
-          SliverToBoxAdapter(
-            child: SizedBox(height: 16),
-          ),
-          SliverToBoxAdapter(
-            child: CustomHomeViewListTile(),
-          ),
-          SliverToBoxAdapter(
-            child: SizedBox(height: 16),
-          ),
-          SliverToBoxAdapter(
-            child: CustomHomeViewSearchTextField(),
-          ),
-          SliverToBoxAdapter(
-            child: SizedBox(height: 12),
-          ),
-          SliverToBoxAdapter(
-            child: Center(
-              child: SizedBox(
-                height: AppLayout.getHeight(context) * 0.2,
-                child: HomeViewOffersListItem(),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(child: SizedBox(height: 12)),
-          SliverToBoxAdapter(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  S.of(context).MorePurchases,
-                  style: AppStyles.textStyle16,
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                SizedBox(height: 16),
+                CustomHomeViewListTile(),
+                SizedBox(height: 16),
+                CustomHomeViewSearchTextField(),
+                SizedBox(height: 12),
+                SizedBox(
+                  height: AppLayout.getHeight(context) * 0.2,
+                  child: HomeViewOffersListItem(),
                 ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Text(
-                    S.of(context).More,
-                    style: AppStyles.textStyle13
-                        .copyWith(fontWeight: FontWeight.w400),
-                  ),
+                SizedBox(height: 12),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      S.of(context).MorePurchases,
+                      style: AppStyles.textStyle16,
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        S.of(context).More,
+                        style: AppStyles.textStyle13
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ],
                 ),
+                SizedBox(height: 8),
               ],
             ),
           ),
-          SliverToBoxAdapter(child: SizedBox(height: 8)),
-          SliverFillRemaining(
-            child: HomeViewGridViewFruitItem(),
-          ),
+          HomeViewGridViewFruitItem(),
         ],
       ),
     );
