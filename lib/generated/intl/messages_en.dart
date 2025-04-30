@@ -20,13 +20,15 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(currency, unit) => "${currency} / ${unit}";
+  static String m0(currency) => "${currency} / ";
 
   static String m1(provider) => "Login With ${provider}";
 
   static String m2(discount) => "${discount}% OFF";
 
-  static String m3(name) => "${name} is required.";
+  static String m3(unit) => "${unit}";
+
+  static String m4(name) => "${name} is required.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -53,7 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "Categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
-    "CurrencyPerUnit": m0,
+    "CurrencyPer": m0,
     "EidOffers": MessageLookupByLibrary.simpleMessage("Eid Offers"),
     "Facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
     "FireBaseAccountExistWithDifferntCredential":
@@ -166,6 +168,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "RegisterViewTitle": MessageLookupByLibrary.simpleMessage("Register"),
     "ShoppingNow": MessageLookupByLibrary.simpleMessage("Shopping Now"),
-    "requiredFiled": m3,
+    "Unit": m3,
+    "requiredFiled": m4,
   };
 }

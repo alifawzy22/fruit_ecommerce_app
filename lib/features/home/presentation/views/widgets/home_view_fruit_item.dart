@@ -68,8 +68,15 @@ class HomeViewFruitItem extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                            text: S.of(context).CurrencyPerUnit(
+                            text: S.of(context).CurrencyPer(
                                   isLocaleArabic() ? 'جنية' : 'EGY',
+                                ),
+                            style: AppStyles.textStyle13.copyWith(
+                              color: AppColor.orangeColor,
+                            ),
+                          ),
+                          TextSpan(
+                            text: S.of(context).Unit(
                                   isLocaleArabic() ? 'الكيلو' : 'KG',
                                 ),
                             style: AppStyles.textStyle13.copyWith(

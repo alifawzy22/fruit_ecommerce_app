@@ -590,14 +590,19 @@ class S {
     return Intl.message('More', name: 'More', desc: '', args: []);
   }
 
-  /// `{currency} / {unit}`
-  String CurrencyPerUnit(Object currency, Object unit) {
+  /// `{currency} / `
+  String CurrencyPer(Object currency) {
     return Intl.message(
-      '$currency / $unit',
-      name: 'CurrencyPerUnit',
+      '$currency / ',
+      name: 'CurrencyPer',
       desc: '',
-      args: [currency, unit],
+      args: [currency],
     );
+  }
+
+  /// `{unit}`
+  String Unit(Object unit) {
+    return Intl.message('$unit', name: 'Unit', desc: '', args: [unit]);
   }
 
   /// `Home`

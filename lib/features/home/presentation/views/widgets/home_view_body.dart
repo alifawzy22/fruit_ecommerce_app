@@ -20,7 +20,6 @@ class HomeViewBody extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                SizedBox(height: 16),
                 CustomHomeViewListTile(),
                 SizedBox(height: 16),
                 CustomHomeViewSearchTextField(),
